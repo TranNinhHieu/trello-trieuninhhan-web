@@ -1,0 +1,10 @@
+@import '_setting.scss';
+$appboard-bg-color:rgb(148, 150, 248);
+
+.navbar-app{
+    padding-left: $gap; 
+    display:flex;
+    align-items: center;
+    background-color: $appboard-bg-color;
+    font-size: 1.5rem;
+  }
