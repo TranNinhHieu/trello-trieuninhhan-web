@@ -8,9 +8,9 @@
 
 
 .board-content{
-    display:flex;
-    margin : 0 $gap $gap;
+    height:$board-content-height;
     overflow-x: auto;
+    overflow-y: hidden;
     &::-webkit-scrollbar {
       -webkit-appearance: none;
     }
@@ -21,5 +21,9 @@
       background-color: $bg-common-element;
       border: 8px;
     }
-
+    .column-drop-preview {
+      background-color: rgba(150, 150, 200, 0.1);
+      border: 1px dashed #abc;
+      margin: 5px 45px 5px 5px;
+    }
   }

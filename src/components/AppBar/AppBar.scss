@@ -2,6 +2,7 @@
 $appboard-bg-color:rgb(148, 150, 248);
 
 .navbar-app{
+    height:$navbar-app-height;
     padding-left: $gap; 
     display:flex;
     align-items: center;
