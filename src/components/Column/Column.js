@@ -5,9 +5,8 @@ import Card from 'components/Card/Card'
 
 import {mapOrder} from 'utilities/sorts'
 function Column(props){
-  const { column } = props
+  const {column} = props
   const cards = mapOrder(column.cards,column.cardOrder,'id')
-
   return(
       <div className="column">
       <header className="">{column.title}</header>
@@ -17,7 +16,6 @@ function Column(props){
       <footer className="">Add another card</footer>
     </div>
   )
-
 }
 
 export default Column
