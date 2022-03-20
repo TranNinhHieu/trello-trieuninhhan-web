@@ -7,6 +7,10 @@
     display:flex;
     overflow-x: auto;
     overflow-y: hidden;
+    &::after{
+      content:'';
+      flex: 0 0 $gap;
+    }
     &::-webkit-scrollbar {
       -webkit-appearance: none;
     }
@@ -24,7 +28,7 @@
     }
     .add-new-column{
       width: 250px;
-      height:32px;
+      max-width: 250px;
       line-height:32px;
       padding:4px 0 4px 15px;
       cursor: pointer;
@@ -33,8 +37,33 @@
       font-size:15px;
       background-color:hsla(0, 0%, 100%, 0.24);
       border-radius:$column-border-radius;
+
       &:hover{
         background-color:hsla(0, 0%, 100%, 0.44);
+      }
+    }
+    .enter-new-column{
+      width: 250px;
+      max-width: 250px;
+      background-color:$column-bg-color;
+      line-height:32px;
+      padding:4px 10px;
+      margin-left:$gap;
+      border-radius:$column-border-radius;
+      input.input-enter-new-column {
+        margin : 5px 0;
+      }
+      span.cancel-new-column{
+        margin-left:$gap;
+        cursor: pointer;
+        i{
+          font-size:18px;
+          color:$alert-danger;
+          &:hover{
+            color:darken($alert-danger,10);
+          }
+        }
+        
       }
     }
   }

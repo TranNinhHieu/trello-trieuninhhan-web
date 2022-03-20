@@ -1,6 +1,5 @@
 @import '_setting.scss';
 
-$list-bg-color:rgb(230, 234, 248);
 
 $column-header-height:46px;
 $column-footer-height:46px;
@@ -15,7 +14,7 @@ $column-height:calc(#{$board-content-height} - #{$gap * 2});
         margin-left: $gap;
 
         > * {
-          background-color:$list-bg-color;
+          background-color:$column-bg-color;
           padding: 0 8px;
         }
         header.column-drag-handle{
@@ -36,7 +35,7 @@ $column-height:calc(#{$board-content-height} - #{$gap * 2});
           border-bottom-right-radius: $column-border-radius;
           color: #888;
           .footer-actions{
-            margin-left:$gap;
+            margin-left:5px;
             cursor: pointer;
             &:hover{
               color: $app-main-text-color;
@@ -57,8 +56,8 @@ $column-height:calc(#{$board-content-height} - #{$gap * 2});
             width:11px;
           }
           &::-webkit-scrollbar-thumb {
-            background-color: darken($list-bg-color, 15);
-            border-right: 5px $list-bg-color  solid;
+            background-color: darken($column-bg-color, 15);
+            border-right: 5px $column-bg-color  solid;
           }
           .card-ghost {
             transition: transform 0.18s ease;
