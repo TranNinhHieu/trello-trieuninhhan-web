@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400.600');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600');
 
 $gap :10px;
 
@@ -10,6 +10,7 @@ $column-border-radius:5px;
 //color
 $board-bg-color:rgb(104, 126, 236);
 $bg-common-element:rgba(43, 18, 18, 0.24);
+$input-border-color:rgb(104, 126, 236);
 $app-main-text-color:#333;
 $column-bg-color:rgb(230, 234, 248);
 $alert-danger:#ee5253;
