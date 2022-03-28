@@ -9,6 +9,7 @@ import {mapOrder} from 'utilities/sorts'
 import {applyDrag} from 'utilities/dragDrop'
 
 import {initialData} from 'actions/initialData'
+import {fetBoardDetails} from 'actions/ApiCall'
 
 function BoardContent(){
     const [board, setBoard] = useState({})
@@ -24,13 +25,11 @@ function BoardContent(){
 
     useEffect(() => {
         const boardFromDB = initialData.boards.find(board => board.id === 'board-1')
-        if(boardFromDB){
+        const boardId = '623dad30468af752957ecf69'
+        fetBoardDetails(boardId).then(board => {
             setBoard(boardFromDB)
-
-            //sort column 
-
             setColumns(mapOrder(boardFromDB.columns, boardFromDB.columnOrder, 'id'))
-        }
+        })
     }, [])
 
     useEffect(() => {
