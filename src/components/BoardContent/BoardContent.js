@@ -63,9 +63,7 @@ function BoardContent(){
         updateBoard(newBoard._id, newBoard).then(updateBoard => {
             setColumns(newColumns)
             setBoard(updateBoard)
-        })
-
-        updateBoard(newBoard._id, newBoard).catch(() => {
+        }).catch(() => {
             setColumns(columns)
             setBoard(board)
         })
@@ -121,20 +119,28 @@ function BoardContent(){
             title: newColumnTitle.trim()
         }
 
-        createNewColumn(newColumnToAdd).then(column => {
-            console.log(column)
-            let newColumns=[...columns]
-            newColumns.push(column)
-            
-            let newBoard = { ...board }
-            newBoard.columnOrder = newColumns.map(c => c._id)
-            newBoard.columns = newColumns
+        createNewColumn(newColumnToAdd).then(() => {
 
-            setColumns(newColumns)
-            setBoard(newBoard)
+            // console.log(column)
+            // let newColumns=[...columns]
+            // newColumns.push(column)
+            
+            // let newBoard = { ...board }
+            // newBoard.columnOrder = newColumns.map(c => c._id)
+            // newBoard.columns = newColumns
+
+            // setColumns(newColumns)
+            // setBoard(newBoard)
             setNewColumnTitle('')
             toggeleOpenNewColumnForm()
+        }).then(() =>{
+            fetBoardDetails(board._id).then(board => {
+                console.log(board)
+                setBoard(board)
+                setColumns(mapOrder(board.columns, board.columnOrder, '_id'))
+            })
         })
+        
 
         
 
